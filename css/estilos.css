@@ -72,3 +72,42 @@ button:focus-visible {
 .oculto {
     display: none;
 }
+
+#lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.tarjeta {
+    background-color: #212529;
+    border: 1px solid #495057;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.tarjeta:hover {
+    border-color: #7952b3;
+}
+
+.tarjeta h3 {
+    color: #b197fc;
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+}
+
+.tarjeta p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.tarjeta .categoria {
+    display: inline-block;
+    background-color: #7952b3;
+    color: white;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
