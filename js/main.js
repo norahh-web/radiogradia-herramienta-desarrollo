@@ -7,6 +7,9 @@ const btnInfo = document.querySelector("#btn-info");
 const infoExtra = document.querySelector("#info-extra");
 // para la Fase C:
 const lista = document.querySelector("#lista");
+// para la fase D
+const buscador = document.querySelector("#buscador");
+const sinResultados = document.querySelector("#sin-resultados");
 
 btnMensaje.addEventListener("click", function () {
     mostrarMensaje(mensaje, "Has pulsado el botón");
@@ -21,3 +24,17 @@ btnInfo.addEventListener("click", function () {
 });
 
 pintarLista(lista, caracteristicasBoot);
+
+buscador.addEventListener("input", function() {
+    const texto = buscador.value.toLowerCase();
+    const filtradas = caracteristicasBoot.filter(function (c) {
+        return c.nombre.toLowerCase().includes(texto) || c.descripcion.toLowerCase().includes(texto) ||
+    c.categoria.toLowerCase().includes(texto);
+    });
+    pintarLista(lista, filtradas);
+    if (filtradas.length === 0) {
+        sinResultados.classList.remove("oculto");
+    } else {
+        sinResultados.classList.add("oculto");
+    }
+});
